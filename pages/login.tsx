@@ -17,6 +17,7 @@ const LoginPage = () => {
     setAuthStatus(localStorage.getItem("status"));
     setAuthToken(localStorage.getItem("token"));
   }, []);
+  
   const SubmitHandler = async (e: Event) => {
     e.preventDefault();
     if (!email || !password) {

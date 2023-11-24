@@ -92,15 +92,18 @@ const ShoppingCart = () => {
           await handlecart();
           return;
         }
+
         const response = await resp.json();
         if (response) {
           setCartData(response);
           const configurableItems = response?.included.filter(
             (item: any) => item.attributes.configuredBundle !== null
           );
+
           const filteredItems = response?.included.filter(
             (item: any) => item.attributes.configuredBundle === null
           );
+
           const formattedData: any[] = [];
           await configurableItems.forEach((item: any) => {
             if (item.attributes.configuredBundle !== null) {
@@ -634,7 +637,7 @@ const ShoppingCart = () => {
                               fontWeight: "bold",
                             }}
                           >
-                            {val.attributes.quantity} X        {val.attributes.calculations.unitPrice/100}
+                            {val.attributes.quantity} X {val.attributes.calculations.unitPrice/100}
                           </p>
                           <div
                             style={{

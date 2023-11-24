@@ -7,6 +7,7 @@ const Content = (product: any) => {
   var cartId: any;
   var token: any;
   var customerGroup: any = "";
+  
   if (typeof window !== "undefined") {
     // Code running in the browser
     cartId = localStorage.getItem("cartId");
@@ -36,6 +37,7 @@ const Content = (product: any) => {
   const [merchantOffer, setMerchantOffer] = useState<any>();
   const [selectedMerchantOffer, setSelectedMerchantOffer] = useState<any>();
   const [wishlistedItemId, setWishlistedItemId] = useState<any>("");
+  
   const getShoppingListName = async () => {
     const resp = await fetch(`${API_URL}/shopping-lists`, {
       method: "GET",
@@ -176,6 +178,7 @@ const Content = (product: any) => {
       setIsBundle(true);
     }
   }, [product]);
+
   const handlecart = async () => {
     try {
       const resp = await fetch(`${API_URL}/carts`, {
@@ -315,6 +318,7 @@ try {
     };
     handlerfunction();
   }, [productData]);
+
   useEffect(() => {
     if (variationIdData && variationIdData[1]) {
       shoppingItems?.map((item: any) => {

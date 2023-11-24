@@ -19,6 +19,7 @@ const ProductItem = ({
   var cartId = localStorage.getItem("cartId");
   var wishlistId = SHOPPING_LIST_ID;
   const [selectedMerchantOffer, setSelectedMerchantOffer] = useState<any>();
+  
   const toggleFav = async () => {
     if (wishlisted) {
       // Item is already wishlisted, do nothing

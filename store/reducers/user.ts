@@ -43,6 +43,7 @@ const userSlice = createSlice({
 
       remove(state.favProducts, id => id === action.payload.id);
     },
+    
     setUserLogged(state, action: PayloadAction<ProductType>) {
       const index = state.favProducts.includes(action.payload.id);
 
